@@ -1,4 +1,5 @@
 import React from 'react'
+import {motion} from "motion/react";
 
 const Skills=()=>{
   return (
@@ -7,8 +8,26 @@ const Skills=()=>{
           <h1 className='text-6xl font-bold'><span className='italic'>Tech Stack </span>I Work With.</h1>
           <hr className='border-t border-4 border-blue-500 rounded-full w-70' />
         </div>
-        <div className='flex flex-col w-2/3 gap-8 ml-30 shadow-sm p-10 shadow-blue-950 rounded-xl'>
-          <div className='flex px-10 min-h-40 hover:shadow-md hover:shadow-blue-500 hover:scale-103 hover:rounded-lg duration-500 ease-in-out'>
+        <motion.div 
+        initial="rest"
+        whileInView="hover"
+        transition={{
+          duration:0.5,
+          ease:"easeInOut"
+        }}
+        className='flex flex-col w-2/3 gap-8 ml-30 shadow-sm p-10 shadow-blue-950 rounded-xl'>
+          <motion.div
+          variants={{
+            hidden:{
+              opacity:0,
+              y:0
+            },
+            hover:{
+              opacity:1,
+              y:60
+            }
+          }} 
+          className='flex px-10 min-h-40 hover:shadow-md hover:shadow-blue-500 hover:scale-103 hover:rounded-lg duration-500 ease-in-out'>
             <div className='self-start w-1/2 py-2'>
               <h1 className='font-semibold text-xl'>LANGUAGES</h1>
             </div>
@@ -26,8 +45,19 @@ const Skills=()=>{
                 <h1>JavaScript</h1>
               </div>
             </div>
-          </div>
-          <div className='flex px-10 min-h-40 hover:shadow-md hover:shadow-blue-500 hover:scale-103 hover:rounded-lg duration-500 ease-in-out'>
+          </motion.div>
+          <motion.div 
+          variants={{
+            hidden:{
+              opacity:0,
+              y:0
+            },
+            hover:{
+              opacity:1,
+              y:60
+            }
+          }} 
+          className='flex px-10 min-h-40 hover:shadow-md hover:shadow-blue-500 hover:scale-103 hover:rounded-lg duration-500 ease-in-out'>
             <div className='self-start w-1/2 py-2'>
               <h1 className='font-semibold text-xl'>FRONTEND</h1>
             </div>
@@ -63,7 +93,7 @@ const Skills=()=>{
                 <h1>Motion</h1>
               </div>
             </div>
-          </div>
+          </motion.div>
           <div className='flex px-10 min-h-40 hover:shadow-md hover:shadow-blue-500 hover:scale-103 hover:rounded-lg duration-500 ease-in-out'>
             <div className='self-start w-1/2 py-2'>
               <h1 className='font-semibold text-xl'>BACKEND</h1>
@@ -132,7 +162,7 @@ const Skills=()=>{
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
   );
 }

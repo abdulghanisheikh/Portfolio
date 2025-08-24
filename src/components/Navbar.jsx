@@ -5,81 +5,119 @@ const Navbar=()=>{
     const logo="{AG}";
     return (
       <motion.div
-      className='navbar shadow-md shadow-blue-850 hover:shadow-sm hover:shadow-blue-800 sticky top-1 z-[2] bg-zinc-900 opacity-[98%] flex w-2/3 self-center rounded-full justify-between items-center py-5 px-8'
+      className='navbar shadow-md shadow-blue-850 hover:shadow-sm hover:shadow-blue-800 sticky top-1 z-[2] bg-black/30 backdrop-blur-xl opacity-[98%] flex w-2/3 self-center rounded-full justify-between items-center py-5 px-8'
       whileHover={{
         y:5
       }}
       transition={{
-        duration:0.3,
+        duration:0.1,
         ease:"easeInOut"
       }}
       >
         <div className='logo text-3xl'>
           <a href="" className='font-semibold'>{logo}</a>
         </div>
-        <div className='links flex gap-5 text-lg'>
-          <motion.a href="" 
-          initial={{
-            scale:1,
-            rotate:0
+        <div className='links flex gap-5 text-lg'>    
+          <motion.a 
+          href=""
+          initial="rest"
+          whileHover="hover"
+          className='font-semibold py-[1px] px-1 rounded-md relative'>Home
+          <motion.span className='absolute left-0 bottom-0 h-[3px] bg-blue-500 rounded-full'
+          variants={{
+            rest:{
+              width:0
+            },
+            hover:{
+              width:"100%"
+            }
           }}
-          whileHover={{
-            scale:1.1,
-            rotate:2
-          }} 
           transition={{
-            duration:0.3,
+            duration:0.2,
             ease:"easeInOut"
           }}
-          className='font-semibold'>Home</motion.a>
-          <motion.a href="" initial={{
-            scale:1,
-            rotate:0
+          ></motion.span>
+          </motion.a>
+          <motion.a 
+          href=""
+          initial="rest"
+          whileHover="hover"
+          className='font-semibold py-[1px] px-1 rounded-md relative'>About
+          <motion.span className='absolute left-0 bottom-0 h-[3px] bg-blue-500 rounded-full'
+          variants={{
+            rest:{
+              width:0
+            },
+            hover:{
+              width:"100%"
+            }
           }}
-          whileHover={{
-            scale:1.1,
-            rotate:2
-          }} 
           transition={{
-            duration:0.3,
+            duration:0.2,
             ease:"easeInOut"
-          }} className='font-semibold'>About</motion.a>
-          <motion.a href="" initial={{
-            scale:1,
-            rotate:0
           }}
-          whileHover={{
-            scale:1.1,
-            rotate:2
-          }} 
-          transition={{
-            duration:0.3,
-            ease:"easeInOut"
-          }} className='font-semibold'>Skills</motion.a>
-          <motion.a href="" initial={{
-            scale:1,
-            rotate:0
+          ></motion.span>
+          </motion.a>
+          <motion.a 
+          href=""
+          initial="rest"
+          whileHover="hover"
+          className='font-semibold py-[1px] px-1 rounded-md relative'>Skills
+          <motion.span className='absolute left-0 bottom-0 h-[3px] bg-blue-500 rounded-full'
+          variants={{
+            rest:{
+              width:0
+            },
+            hover:{
+              width:"100%"
+            }
           }}
-          whileHover={{
-            scale:1.1,
-            rotate:2
-          }} 
           transition={{
-            duration:0.3,
+            duration:0.2,
             ease:"easeInOut"
-          }} className='font-semibold'>Projects</motion.a>
-          <motion.a href="" initial={{
-            scale:1,
-            rotate:0
           }}
-          whileHover={{
-            scale:1.1,
-            rotate:2
-          }} 
+          ></motion.span>
+          </motion.a>
+          <motion.a 
+          href=""
+          initial="rest"
+          whileHover="hover"
+          className='font-semibold py-[1px] px-1 rounded-md relative'>Projects
+          <motion.span className='absolute left-0 bottom-0 h-[3px] bg-blue-500 rounded-full'
+          variants={{
+            rest:{
+              width:0
+            },
+            hover:{
+              width:"100%"
+            }
+          }}
           transition={{
-            duration:0.3,
+            duration:0.2,
             ease:"easeInOut"
-          }} className='font-semibold'>Contact</motion.a>
+          }}
+          ></motion.span>
+          </motion.a>
+          <motion.a 
+          href=""
+          initial="rest"
+          whileHover="hover"
+          className='font-semibold py-[1px] px-1 rounded-md relative'>Contact
+          <motion.span className='absolute left-0 bottom-0 h-[3px] bg-blue-500 rounded-full'
+          variants={{
+            rest:{
+              width:0
+            },
+            hover:{
+              width:"100%"
+            }
+          }}
+          transition={{
+            duration:0.2,
+            ease:"easeInOut"
+          }}
+          ></motion.span>
+          </motion.a>
         </div>
       </motion.div>
   )

@@ -22,24 +22,54 @@ const Hero=()=>{
             <div className='flex flex-col mt-10 justify-center gap-5'>
                 <h1 className='text-2xl tracking-tighter text-gray-300'>🚀 Currently building skills in Frontend (React / Next.js)</h1>
                 <motion.a href="/AbdulGhaniCV.pdf"
-                initial={{
-                    rotate:0,
-                    scale:1,
-                    color:"white"
-                }}
-                whileHover={{
-                    rotate:2,
-                    scale:1.05,
-                    color:"skyblue"
+                initial="rest"
+                whileHover="hover"
+                variants={{
+                    rest:{
+                        scale:1,
+                        rotate:0
+                    },
+                    hover:{
+                        scale:1.07,
+                        rotate:3,
+                    }
                 }}
                 transition={{
-                    duration:0.3,
+                    duration:0.2,
                     ease:"easeInOut"
                 }}
                 download={true}
                 className="flex gap-2 w-fit py-3 px-5 items-center rounded-lg bg-gray-800 hover:bg-gray-700 duration-300 ease-in-out">
-                <TbFileDownload className='text-xl'/>
-                <span className='font-semibold'>Curriculum Vitae</span>
+                <motion.div
+                variants={{
+                    rest:{
+                        color:"white"
+                    },
+                    hover:{
+                        color:"#3B82F6",
+                        scale:1.06
+                    }
+                }}
+                transition={{
+                    duration:0.2,
+                    ease:"easeInOut"
+                }}
+                >
+                    <TbFileDownload className='text-xl'/>
+                </motion.div>
+                <motion.span
+                variants={{
+                    rest:{
+                        scale:1
+                    },
+                    hover:{
+                        scale:1.06
+                    }
+                }} 
+                transition={{
+                    duration:0.2,
+                    ease:"easeInOut"
+                }} className='font-semibold'>Curriculum Vitae</motion.span>
                 </motion.a>
             </div>
         </div>
