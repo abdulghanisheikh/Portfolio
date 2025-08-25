@@ -8,7 +8,7 @@ const Bar=()=>{
         style={{
             scaleX:scrollYProgress
         }} 
-        className='w-full h-[2px] z-[3] fixed top-0 left-0 rounded-full bg-blue-500 origin-top-left'>
+        className='w-full h-[3px] z-[3] fixed top-0 left-0 rounded-full bg-blue-500 origin-top-left'>
         </motion.div>
     );
 }

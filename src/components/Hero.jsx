@@ -1,23 +1,61 @@
 import React from 'react'
 import { TbFileDownload } from "react-icons/tb";
+import { IoLocationSharp } from "react-icons/io5";
+import { MdOutlineMail } from "react-icons/md";
 import {motion} from "motion/react";
 
 const Hero=()=>{
   return (
-    <div id='hero' className='h-screen w-full gap-10 flex justify-center items-start py-30'>
+    <div id='hero' className='h-screen w-full gap-4 flex justify-center items-start py-20'>
         <div className='flex flex-col gap-3 ml-20'>
             <div className='rounded-full overflow-hidden'>
-                <img src="../profile1.jpg" className='object-cover w-85 h-80 rounded-full border-blue-500 border-2' alt="profile picture" />
+                <motion.img initial={{
+                    opacity:0.8,
+                    scale:1
+                }} whileHover={{
+                    opacity:1,
+                    scale:1.1
+                }} transition={{
+                    duration:0.4,
+                    ease:"easeInOut"
+                }} src="../profile1.jpg" className='object-cover w-85 h-80 rounded-full' alt="profile picture" />
             </div>
-            <div className='flex flex-col'>
-                <h1 className='text-gray-400 self-center'>Web Developer &</h1>
-                <h1 className='text-gray-400 self-center'>Software Engineering Student</h1>
+            <div className='flex flex-col gap-10'>
+                <div className='flex flex-col items-center'>
+                    <h1 className='text-gray-400 self-center'>Web Developer &</h1>
+                    <h1 className='text-gray-400 self-center'>Software Engineering Student</h1>
+                </div>
+                <div className='flex flex-col items-center'>
+                    <div className='flex gap-1 items-center'>
+                        <IoLocationSharp className='text-blue-500'/>
+                        <h1 className='text-gray-400'>New Delhi, IN</h1>
+                    </div>
+                    <div className='flex justify-between gap-5 tracking-tight'>
+                        <a href='mailto:ghanisheikh26@gmail.com' className='flex items-center gap-1'>
+                        <MdOutlineMail className='text-blue-500' />
+                        <h1 className='text-gray-400'>ghanisheikh26@gmail.com</h1>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
-        <div className='flex flex-col gap-10 w-3/4 ml-20'>
+        <div className='w-[1px] h-[500px] border-1 border-white opacity-5 ml-8'></div>
+        <div className='flex flex-col gap-10 w-3/4 ml-8'>
             <div className='flex flex-col gap-5 w-full'>
-            <h1 className='text-8xl tracking-tighter'><span className='italic'>Hello</span>, I'm <span className='text-blue-500 font-semibold'>Abdul Ghani</span>.</h1>
-            <h1 className='text-3xl tracking-tighter text-gray-400 w-3/4'><span className='text-white font-semibold'>Web Developer.</span> A self-taught developer with an interest in Computer Science.</h1>
+            <h1 className='text-2xl tracking-tighter'>Hi, I'm- <br /><motion.span whileInView={{
+                opacity:[0,1],
+            }} transition={{
+                duration:0.6,
+                delay:0.3,
+                ease:"easeInOut"
+            }} className='text-blue-500 text-9xl font-semibold'>Abdul Ghani</motion.span><span className='text-9xl'>.</span></h1>
+            <h1 className='text-3xl tracking-tighter text-gray-300 w-full'>a <motion.span whileInView={{
+                opacity:[0,1],
+            }} transition={{
+                duration:0.8,
+                delay:0.9,
+                ease:"easeInOut"
+            }} className='text-white font-semibold'>Web Developer</motion.span>. Building the web, better.</h1>
             </div>
             <div className='flex flex-col mt-10 justify-center gap-5'>
                 <h1 className='text-2xl tracking-tighter text-gray-300'>🚀 Currently building skills in Frontend (React / Next.js)</h1>

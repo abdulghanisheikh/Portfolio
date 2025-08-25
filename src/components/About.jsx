@@ -1,51 +1,48 @@
-import React from 'react'
+import React, { Children } from 'react'
 import { RiGraduationCapFill } from "react-icons/ri";
-import { MdOutlineMail } from "react-icons/md";
-import { IoLocationSharp } from "react-icons/io5";
 import {motion} from 'motion/react';
+import { BsGithub } from "react-icons/bs";
+import { FaLinkedin } from "react-icons/fa";
+import { TfiEmail } from "react-icons/tfi";
+import { IoLogoInstagram } from "react-icons/io5";
+import { LuFileDown } from "react-icons/lu";
+import { FaXTwitter } from "react-icons/fa6";
 
 const About=()=>{
+  const variant1={hidden:{opacity:0,y:50},inView:{opacity:1,y:0}}
+  const variant2={hidden:{opacity:0,y:-50},inView:{opacity:1,y:0}}
+  const parentVariants={hidden:{},visible:{transition:{staggerChildren:0.2,delayChildren:0.5}}}
+  const childVariants={hidden:{opacity:0,x:50},visible:{opacity:1,x:0}}
+
   return (
-    <div id='about' className='w-full h-screen py-30 flex flex-col gap-15 items-center'>
-            <div className='flex w-3/4 flex-col gap-1'>
+    <div id='about' className='w-full h-screen py-25 flex flex-col gap-10 items-center'>
+            <div className='flex flex-col gap-1 w-2/3'>
               <h1 className='font-bold tracking-tighter text-6xl self-start'>About Me</h1>
               <hr className='border-t border-4 rounded-full w-40 text-blue-500'/>
             </div>
             <div className='flex gap-50'>
-              <motion.div
-              initial={{
-                opacity:0,
-                y:100
-              }}
-              whileInView={{
-                opacity:1,
-                y:0
-              }} 
-              transition={{
-                duration:1,
+              <motion.div variants={variant1} initial="hidden" whileInView="inView" transition={{
+                duration:0.5,
                 delay:0.5,
                 ease:"easeInOut"
+              }} viewport={{
+                amount:0.8
               }}
-              className='bg-zinc-900 p-8 tracking-tight flex flex-col gap-5 rounded-lg w-130 text-gray-300 shadow-xs shadow-blue-900 hover:shadow-lg hover:shadow-blue-40 duration-500 ease-in-out hover:scale-110'>          
+              className='bg-zinc-900 p-5 px-10 tracking-tight flex flex-col gap-5 rounded-lg w-130 text-gray-300 shadow-xs shadow-blue-900 hover:shadow-lg hover:shadow-blue-40 duration-500 ease-in-out hover:scale-110'>        
                 <div><p>Hello, I'm <span className='font-semibold'>Abdul Ghani</span>, a <span className='font-semibold text-blue-400'>Web Developer</span> with experience in designing and developing full-stack applications. Proficient in backend technologies such as <span className='text-blue-400 font-semibold'>Node.js</span>,<span className='text-blue-400 font-semibold'> Express</span>, <span className='text-blue-400 font-semibold'>MongoDB</span>, <span className='text-blue-400 font-semibold'>JavaScript</span> and <span className='text-blue-400 font-semibold'>Java</span>, and frontend technologies including <span className='font-semibold text-blue-400'>React</span>, <span className='text-blue-400 font-semibold'>TailwindCSS</span>,<span className='text-blue-400 font-semibold'> HTML5</span> and <span className='text-blue-400 font-semibold'>CSS3</span> with end-to-end development exposure. Skilled in RESTful API development, authentication and authorization (JWT, bcrypt), and database integration with MongoDB and I'm eager to work on cutting-edge technologies in web development.</p></div>
                 <div>
                   <p>When I'm not coding, I enjoy playing multiplayer games such as Call of Duty, which foster relaxation, strategy and collaboration with friends.</p>
                 </div>
               </motion.div>
-              <div className='flex flex-col justify-between'>
-                <motion.div initial={{
-                      opacity:0,
-                      y:-100
-                  }}
-                  whileInView={{
-                    opacity:1,
-                    y:0
-                  }} 
-                  transition={{
-                    duration:1,
-                    delay:0.3,
-                    ease:"easeInOut"
-                  }} className='flex self-start flex-col gap-5'>
+              <div className='flex flex-col gap-25 items-center'>
+                <motion.div variants={variant2} initial="hidden" whileInView="inView" transition={{
+                  duration:0.5,
+                  delay:0.5,
+                  ease:"easeInOut"
+                }} viewport={{
+                  amount:1
+                }}
+                className='flex flex-col gap-5'>
                   <div className='flex items-center gap-2 text-3xl'>
                     <RiGraduationCapFill/>
                     <h1 className='font-semibold tracking-tighter'>Education</h1>
@@ -61,17 +58,32 @@ const About=()=>{
                     </div>
                   </div>
                 </motion.div>
-                <div className='flex justify-between tracking-tight'>
-                  <a href='mailto:ghanisheikh26@gmail.com' className='flex gap-1 py-2 px-3 bg-zinc-800 rounded-lg items-center'>
-                    <MdOutlineMail className='text-blue-500 text-2xl' />
-                    <h1 className='text-lg'>ghanisheikh26@gmail.com</h1>
-                  </a>
-                  <div
-                  className='flex gap-1 py-2 px-3 bg-zinc-800 rounded-lg items-center'>
-                    <IoLocationSharp className='text-blue-500 text-2xl'/>
-                    <h1 className='text-lg'>New Delhi, IN</h1>
-                  </div>
-                </div>
+                <motion.div className='socials flex justify-evenly' initial="hidden" whileInView="visible" variants={parentVariants}>
+                  <motion.a href="https://github.com/abdulghanisheikh" target="_blank" variants={childVariants} initial="initial" whileHover="hovered" className='flex flex-col items-center'>
+                    <BsGithub size={28}/>
+                    <motion.h1 className='text-sm' variants={{initial:{opacity:0,y:-10},hovered:{opacity:1,y:0}}}>My Github</motion.h1>
+                  </motion.a>
+                  <motion.a variants={childVariants} target="_blank" href="https://www.linkedin.com/in/abdul-ghani-a5192625b/" initial="initial" whileHover="hovered" className='flex flex-col items-center'>
+                    <FaLinkedin size={28}/>
+                    <motion.h1 className='text-sm' variants={{initial:{opacity:0,y:-10},hovered:{opacity:1,y:0}}}>My LinkedIn</motion.h1>
+                  </motion.a>
+                  <motion.a variants={childVariants} target="_blank" href="mailto:ghanisheikh26@gmail.com" initial="initial" whileHover="hovered" className='flex flex-col items-center'>
+                    <TfiEmail size={28}/>
+                    <motion.h1 className='text-sm' variants={{initial:{opacity:0,y:-10},hovered:{opacity:1,y:0}}}>My Email</motion.h1>
+                  </motion.a>
+                  <motion.a download={true} target="_blank" variants={childVariants} href="/AbdulGhaniCV.pdf" initial="initial" whileHover="hovered" className='flex flex-col items-center'>
+                    <LuFileDown size={28}/>
+                    <motion.h1 className='text-sm' variants={{initial:{opacity:0,y:-10},hovered:{opacity:1,y:0}}}>My CV</motion.h1>
+                  </motion.a>
+                  <motion.a variants={childVariants} target="_blank" href="https://www.instagram.com/ghani21._/" initial="initial" whileHover="hovered" className='flex flex-col items-center'>
+                    <IoLogoInstagram size={28}/>
+                    <motion.h1 className='text-sm' variants={{initial:{opacity:0,y:-10},hovered:{opacity:1,y:0}}}>My Instagram</motion.h1>
+                  </motion.a>
+                  <motion.a href="https://x.com/AbdulGhani2103" target="_blank" variants={childVariants} initial="initial" whileHover="hovered" className='flex flex-col items-center'>
+                    <FaXTwitter size={28}/>
+                    <motion.h1 className='text-sm' variants={{initial:{opacity:0,y:-10},hovered:{opacity:1,y:0}}}>My Twitter</motion.h1>
+                  </motion.a>
+                </motion.div>
               </div>
             </div>
           </div>

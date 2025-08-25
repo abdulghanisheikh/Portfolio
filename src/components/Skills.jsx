@@ -1,37 +1,31 @@
-import React from 'react'
-import {motion} from "motion/react";
+import React from 'react';
+import {motion} from 'motion/react';
 
 const Skills=()=>{
-  return (
-    <div className='skills flex flex-col w-full gap-15 min-h-screen py-30'>
-        <div className='flex flex-col gap-1 ml-30'>
+  return(
+    <div className='skills flex flex-col w-full gap-15 min-h-screen py-25 items-center'>
+        <div className='flex flex-col gap-1 w-2/3'>
           <h1 className='text-6xl font-bold'><span className='italic'>Tech Stack </span>I Work With.</h1>
           <hr className='border-t border-4 border-blue-500 rounded-full w-70' />
         </div>
-        <motion.div 
-        initial="rest"
-        whileInView="hover"
-        transition={{
-          duration:0.5,
-          ease:"easeInOut"
-        }}
-        className='flex flex-col w-2/3 gap-8 ml-30 shadow-sm p-10 shadow-blue-950 rounded-xl'>
-          <motion.div
-          variants={{
-            hidden:{
-              opacity:0,
-              y:0
-            },
-            hover:{
-              opacity:1,
-              y:60
-            }
-          }} 
-          className='flex px-10 min-h-40 hover:shadow-md hover:shadow-blue-500 hover:scale-103 hover:rounded-lg duration-500 ease-in-out'>
+        <div className='flex flex-col w-[80%] gap-8'>
+          <div className='flex px-10 py-5 min-h-40 hover:shadow-md hover:shadow-blue-500 hover:scale-103 hover:rounded-lg duration-500 ease-in-out'>
             <div className='self-start w-1/2 py-2'>
-              <h1 className='font-semibold text-xl'>LANGUAGES</h1>
+              <h1 className='font-semibold text-xl text-gray-400'>LANGUAGES</h1>
             </div>
-            <div className='flex gap-5 flex-wrap py-3 self-start items-center justify-items-start'>
+            <motion.div initial={{
+              y:50,
+              opacity:0
+            }} whileInView={{
+              y:0,
+              opacity:1
+            }} transition={{
+              duration:0.6,
+              delay:0.1,
+              ease:"easeInOut"
+            }} viewport={{
+              amount:0.5
+            }} className='flex gap-5 flex-wrap py-3 self-start items-center justify-items-start'>
               <div className='flex flex-col gap-1 items-center'>
                 <div className='p-2 bg-zinc-800 rounded-full'>
                   <img src="../java.png" alt="" className='w-6 h-6 object-cover'/>
@@ -44,24 +38,25 @@ const Skills=()=>{
                 </div>
                 <h1>JavaScript</h1>
               </div>
-            </div>
-          </motion.div>
-          <motion.div 
-          variants={{
-            hidden:{
-              opacity:0,
-              y:0
-            },
-            hover:{
-              opacity:1,
-              y:60
-            }
-          }} 
-          className='flex px-10 min-h-40 hover:shadow-md hover:shadow-blue-500 hover:scale-103 hover:rounded-lg duration-500 ease-in-out'>
+            </motion.div>
+          </div>
+          <motion.div className='flex px-10 py-5 min-h-40 hover:shadow-md hover:shadow-blue-500 hover:scale-103 hover:rounded-lg duration-500 ease-in-out'>
             <div className='self-start w-1/2 py-2'>
-              <h1 className='font-semibold text-xl'>FRONTEND</h1>
+              <h1 className='font-semibold text-xl text-gray-400'>FRONTEND</h1>
             </div>
-            <div className='flex py-2 flex-wrap gap-5 self-start items-center'>
+            <motion.div initial={{
+              y:50,
+              opacity:0
+            }} whileInView={{
+              y:0,
+              opacity:1
+            }} transition={{
+              duration:0.6,
+              delay:0.1,
+              ease:"easeInOut"
+            }} viewport={{
+              amount:0.5
+            }} className='flex py-2 flex-wrap gap-5 self-start items-center'>
               <div className='flex flex-col gap-1 items-center'>
                 <div className='p-2 bg-zinc-800 rounded-full'>
                   <img src="../reactlogo.png" alt="" className='w-6 h-6 object-cover'/>
@@ -92,13 +87,25 @@ const Skills=()=>{
                 </div>
                 <h1>Motion</h1>
               </div>
-            </div>
+            </motion.div>
           </motion.div>
-          <div className='flex px-10 min-h-40 hover:shadow-md hover:shadow-blue-500 hover:scale-103 hover:rounded-lg duration-500 ease-in-out'>
+          <div className='flex px-10 py-5 min-h-40 hover:shadow-md hover:shadow-blue-500 hover:scale-103 hover:rounded-lg duration-500 ease-in-out'>
             <div className='self-start w-1/2 py-2'>
-              <h1 className='font-semibold text-xl'>BACKEND</h1>
+              <h1 className='font-semibold text-xl text-gray-400'>BACKEND</h1>
             </div>
-            <div className='flex py-2 flex-wrap gap-5 self-start items-center ml-10'>
+            <motion.div initial={{
+              y:50,
+              opacity:0
+            }} whileInView={{
+              y:0,
+              opacity:1
+            }} transition={{
+              duration:0.6,
+              delay:0.1,
+              ease:"easeInOut"
+            }} viewport={{
+              amount:0.5
+            }} className='flex py-2 flex-wrap gap-5 self-start items-center'>
               <div className='flex flex-col gap-1 items-center'>
                 <div className='p-2 bg-zinc-800 rounded-full'>
                   <img src="../Node.js.png" alt="" className='w-6 h-6 object-cover'/>
@@ -129,13 +136,25 @@ const Skills=()=>{
                 </div>
                 <h1>REST APIs</h1>
               </div>
-            </div>
+            </motion.div>
           </div>
-          <div className='flex px-10 min-h-40 hover:shadow-md hover:shadow-blue-500 hover:scale-103 hover:rounded-lg duration-500 ease-in-out'>
+          <div className='flex px-10 py-5 min-h-40 hover:shadow-md hover:shadow-blue-500 hover:scale-103 hover:rounded-lg duration-500 ease-in-out'>
             <div className='self-start w-1/2 py-2'>
-              <h1 className='font-semibold text-xl'>TOOLS</h1>
+              <h1 className='font-semibold text-xl text-gray-400'>TOOLS</h1>
             </div>
-            <div className='flex py-2 flex-wrap gap-5 self-start items-center'>
+            <motion.div initial={{
+              y:50,
+              opacity:0
+            }} whileInView={{
+              y:0,
+              opacity:1
+            }} transition={{
+              duration:0.6,
+              delay:0.1,
+              ease:"easeInOut"
+            }} viewport={{
+              amount:0.5
+            }} className='flex py-2 flex-wrap gap-5 self-start items-center'>
               <div className='flex flex-col gap-1 items-center'>
                 <div className='p-2 bg-zinc-800 rounded-full'>
                   <img src="../Git.png" alt="" className='w-6 h-6 object-cover'/>
@@ -160,9 +179,15 @@ const Skills=()=>{
                 </div>
                 <h1>VS Code</h1>
               </div>
-            </div>
+              <div className='flex flex-col gap-1 items-center'>
+                <div className='p-2 bg-zinc-800 rounded-full'>
+                  <img src="../NPM.png" alt="" className='w-6 h-6 object-cover'/>
+                </div>
+                <h1>NPM</h1>
+              </div>
+            </motion.div>
           </div>
-        </motion.div>
+        </div>
       </div>
   );
 }
