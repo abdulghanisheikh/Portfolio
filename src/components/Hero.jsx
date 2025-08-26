@@ -6,7 +6,7 @@ import {motion} from "motion/react";
 
 const Hero=()=>{
   return (
-    <div id='hero' className='h-screen w-full gap-4 flex justify-center items-start py-20'>
+    <div id='hero' className='h-screen w-full gap-4 flex justify-center items-start py-20 text-white'>
         <div className='flex flex-col gap-3 ml-20'>
             <div className='rounded-full overflow-hidden'>
                 <motion.img initial={{
@@ -52,12 +52,12 @@ const Hero=()=>{
             <h1 className='text-3xl tracking-tighter text-gray-300 w-full'>a <motion.span whileInView={{
                 opacity:[0,1],
             }} transition={{
-                duration:0.8,
+                duration:0.6,
                 delay:0.9,
                 ease:"easeInOut"
             }} className='text-white font-semibold'>Web Developer</motion.span>. Building the web, better.</h1>
             </div>
-            <div className='flex flex-col mt-10 justify-center gap-5'>
+            <div className='flex flex-col mt-25 justify-center gap-5'>
                 <h1 className='text-2xl tracking-tighter text-gray-300'>🚀 Currently building skills in Frontend (React / Next.js)</h1>
                 <motion.a href="/AbdulGhaniCV.pdf"
                 initial="rest"
@@ -115,4 +115,4 @@ const Hero=()=>{
   )
 }
 
-export default Hero
+export default Hero;

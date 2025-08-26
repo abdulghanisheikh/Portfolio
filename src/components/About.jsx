@@ -15,20 +15,25 @@ const About=()=>{
   const childVariants={hidden:{opacity:0,x:50},visible:{opacity:1,x:0}}
 
   return (
-    <div id='about' className='w-full h-screen py-25 flex flex-col gap-10 items-center'>
+    <div id='about' className='w-full h-screen py-25 flex flex-col gap-10 items-center text-white'>
             <div className='flex flex-col gap-1 w-2/3'>
               <h1 className='font-bold tracking-tighter text-6xl self-start'>About Me</h1>
               <hr className='border-t border-4 rounded-full w-40 text-blue-500'/>
             </div>
             <div className='flex gap-50'>
-              <motion.div variants={variant1} initial="hidden" whileInView="inView" transition={{
+              <motion.div variants={variant1} initial="hidden" whileHover={{
+                boxShadow:"0px 0px 5px skyblue,0px 0px 5px skyblue,0px 0px 20px skyblue",
+                scale:1.03,
+                x:20,
+                transition:{duration:0.2,ease:"easeInOut"}
+              }} whileInView="inView" transition={{
                 duration:0.5,
                 delay:0.5,
                 ease:"easeInOut"
               }} viewport={{
-                amount:0.8
+                amount:0.4
               }}
-              className='bg-zinc-900 p-5 px-10 tracking-tight flex flex-col gap-5 rounded-lg w-130 text-gray-300 shadow-xs shadow-blue-900 hover:shadow-lg hover:shadow-blue-40 duration-500 ease-in-out hover:scale-110'>        
+              className='bg-zinc-900 p-5 px-10 tracking-tight flex flex-col gap-5 rounded-lg w-130 text-gray-300'>        
                 <div><p>Hello, I'm <span className='font-semibold'>Abdul Ghani</span>, a <span className='font-semibold text-blue-400'>Web Developer</span> with experience in designing and developing full-stack applications. Proficient in backend technologies such as <span className='text-blue-400 font-semibold'>Node.js</span>,<span className='text-blue-400 font-semibold'> Express</span>, <span className='text-blue-400 font-semibold'>MongoDB</span>, <span className='text-blue-400 font-semibold'>JavaScript</span> and <span className='text-blue-400 font-semibold'>Java</span>, and frontend technologies including <span className='font-semibold text-blue-400'>React</span>, <span className='text-blue-400 font-semibold'>TailwindCSS</span>,<span className='text-blue-400 font-semibold'> HTML5</span> and <span className='text-blue-400 font-semibold'>CSS3</span> with end-to-end development exposure. Skilled in RESTful API development, authentication and authorization (JWT, bcrypt), and database integration with MongoDB and I'm eager to work on cutting-edge technologies in web development.</p></div>
                 <div>
                   <p>When I'm not coding, I enjoy playing multiplayer games such as Call of Duty, which foster relaxation, strategy and collaboration with friends.</p>
@@ -40,14 +45,19 @@ const About=()=>{
                   delay:0.5,
                   ease:"easeInOut"
                 }} viewport={{
-                  amount:1
+                  amount:0.4
                 }}
                 className='flex flex-col gap-5'>
                   <div className='flex items-center gap-2 text-3xl'>
                     <RiGraduationCapFill/>
-                    <h1 className='font-semibold tracking-tighter'>Education</h1>
+                    <h1 className='font-semibold tracking-tighter text-gray-200'>Education</h1>
                   </div>
-                  <div className='bg-zinc-900 tracking-tight p-8 flex flex-col rounded-lg w-110 shadow-xs shadow-blue-900 hover:shadow-lg hover:shadow-blue-40 duration-500 ease-in-out hover:scale-110'>
+                  <motion.div whileHover={{
+                    scale:1.03,
+                    x:-20,
+                    boxShadow:"0px 0px 5px skyblue,0px 0px 5px skyblue,0px 0px 20px skyblue",
+                    transition:{duration:0.2,ease:"easeInOut"}
+                  }} className='bg-zinc-900 tracking-tight p-8 flex flex-col rounded-lg w-110'>
                     <div>
                       <h1 className='text-xl'>Bachelor of Technology in Computer Science & Engineering</h1>
                       <h3>• 8.83 CGPA</h3>
@@ -56,7 +66,7 @@ const About=()=>{
                         <h2>Galgotias University</h2>
                         <h1>2022 - present</h1>
                     </div>
-                  </div>
+                  </motion.div>
                 </motion.div>
                 <motion.div className='socials flex justify-evenly' initial="hidden" whileInView="visible" variants={parentVariants}>
                   <motion.a href="https://github.com/abdulghanisheikh" target="_blank" variants={childVariants} initial="initial" whileHover="hovered" className='flex flex-col items-center'>

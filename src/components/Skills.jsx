@@ -3,7 +3,7 @@ import {motion} from 'motion/react';
 
 const Skills=()=>{
   return(
-    <div className='skills flex flex-col w-full gap-15 min-h-screen py-25 items-center'>
+    <div className='skills flex flex-col w-full gap-15 min-h-screen py-25 items-center text-white'>
         <div className='flex flex-col gap-1 w-2/3'>
           <h1 className='text-6xl font-bold'><span className='italic'>Tech Stack </span>I Work With.</h1>
           <hr className='border-t border-4 border-blue-500 rounded-full w-70' />
