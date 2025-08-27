@@ -9,7 +9,7 @@ import Projects from "./components/Projects";
 const App=()=>{
   return (
     <div className="relative w-full bg-cover bg-top bg-[url('/bg-2.jpg')]">
-      <div className='absolute inset-0 bg-black/70 w-full min-h-full'></div>
+      <div className='absolute inset-0 bg-black/75 w-full min-h-full'></div>
       <Bar/>
       <Navbar />
       <div className='z-[10] backdrop-blur-xl'>

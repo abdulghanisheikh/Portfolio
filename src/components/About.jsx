@@ -9,8 +9,8 @@ import { LuFileDown } from "react-icons/lu";
 import { FaXTwitter } from "react-icons/fa6";
 
 const About=()=>{
-  const variant1={hidden:{opacity:0,y:50},inView:{opacity:1,y:0}}
-  const variant2={hidden:{opacity:0,y:-50},inView:{opacity:1,y:0}}
+  const variant1={hidden:{opacity:0,y:50,x:-20},inView:{opacity:1,y:0,x:0}}
+  const variant2={hidden:{opacity:0,y:-50,x:20},inView:{opacity:1,y:0,x:0}}
   const parentVariants={hidden:{},visible:{transition:{staggerChildren:0.2,delayChildren:0.5}}}
   const childVariants={hidden:{opacity:0,x:50},visible:{opacity:1,x:0}}
 
@@ -28,10 +28,10 @@ const About=()=>{
                 transition:{duration:0.2,ease:"easeInOut"}
               }} whileInView="inView" transition={{
                 duration:0.5,
-                delay:0.5,
+                delay:0.2,
                 ease:"easeInOut"
               }} viewport={{
-                amount:0.4
+                amount:0.5
               }}
               className='bg-zinc-900 p-5 px-10 tracking-tight flex flex-col gap-5 rounded-lg w-130 text-gray-300'>        
                 <div><p>Hello, I'm <span className='font-semibold'>Abdul Ghani</span>, a <span className='font-semibold text-blue-400'>Web Developer</span> with experience in designing and developing full-stack applications. Proficient in backend technologies such as <span className='text-blue-400 font-semibold'>Node.js</span>,<span className='text-blue-400 font-semibold'> Express</span>, <span className='text-blue-400 font-semibold'>MongoDB</span>, <span className='text-blue-400 font-semibold'>JavaScript</span> and <span className='text-blue-400 font-semibold'>Java</span>, and frontend technologies including <span className='font-semibold text-blue-400'>React</span>, <span className='text-blue-400 font-semibold'>TailwindCSS</span>,<span className='text-blue-400 font-semibold'> HTML5</span> and <span className='text-blue-400 font-semibold'>CSS3</span> with end-to-end development exposure. Skilled in RESTful API development, authentication and authorization (JWT, bcrypt), and database integration with MongoDB and I'm eager to work on cutting-edge technologies in web development.</p></div>
@@ -42,7 +42,7 @@ const About=()=>{
               <div className='flex flex-col gap-25 items-center'>
                 <motion.div variants={variant2} initial="hidden" whileInView="inView" transition={{
                   duration:0.5,
-                  delay:0.5,
+                  delay:0.2,
                   ease:"easeInOut"
                 }} viewport={{
                   amount:0.4

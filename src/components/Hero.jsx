@@ -46,14 +46,14 @@ const Hero=()=>{
                 opacity:[0,1],
             }} transition={{
                 duration:0.6,
-                delay:0.3,
+                delay:0.2,
                 ease:"easeInOut"
             }} className='text-blue-500 text-9xl font-semibold'>Abdul Ghani</motion.span><span className='text-9xl'>.</span></h1>
             <h1 className='text-3xl tracking-tighter text-gray-300 w-full'>a <motion.span whileInView={{
                 opacity:[0,1],
             }} transition={{
                 duration:0.6,
-                delay:0.9,
+                delay:0.8,
                 ease:"easeInOut"
             }} className='text-white font-semibold'>Web Developer</motion.span>. Building the web, better.</h1>
             </div>

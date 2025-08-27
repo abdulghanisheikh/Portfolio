@@ -15,11 +15,13 @@ const Navbar=()=>{
       }}
       >
         <div className='logo text-3xl'>
-          <motion.a href="" className='font-semibold' whileHover={{
+          <motion.a href="" className='font-semibold' animate={{
             textShadow:"0 0 10px white, 0 0 20px white, 0 0 30px white"
           }} transition={{
-            duration:0.3,
-            ease:"easeInOut"
+            duration:1.5,
+            ease:"easeInOut",
+            repeat:Infinity,
+            repeatType:"mirror"
           }}>{logo}</motion.a>
         </div>
         <div className='links flex gap-5 text-lg'>

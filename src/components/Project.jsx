@@ -1,35 +1,48 @@
 import React from 'react';
+import {motion} from 'motion/react';
 import { FaExternalLinkSquareAlt } from "react-icons/fa";
 import { FaArrowRight } from "react-icons/fa6";
+import { BsGithub } from "react-icons/bs";
 
-const Project=()=>{
+const Project=(props)=>{
   return(
-    <div className='box relative tracking-tight border-blue-900 h-110 w-110 border rounded-xl overflow-hidden flex flex-col' style={{boxShadow:"0px 0px 5px skyblue,0px 0px 5px skyblue,0px 0px 20px skyblue"}}>
-        <div className='h-[60%] bg-cover overflow-hidden p-5'>
-            <img src="/projects/Scatch-pic.png" className='h-full w-full rounded-md' alt="" />
+    <motion.div whileHover="hovered" initial="rest" className='box relative tracking-tight bg-black/40 border-blue-900 h-110 w-110 border rounded-xl overflow-hidden flex flex-col'
+    style={{boxShadow:"0px 0px 2px skyblue,0px 0px 2px skyblue,0px 0px 20px skyblue"}}
+    >
+        <motion.div variants={{rest:{scale:1,y:0},hovered:{scale:1.2,y:-5}}} transition={{duration:0.5,ease:"easeInOut"}} className='h-[50%] bg-cover overflow-hidden p-5'>
+            <img src={`${props.project.image}`} className='h-full w-full rounded-md' alt="" />
+        </motion.div>
+    <div className='panel h-[50%] flex flex-col justify-between gap-5 w-full px-5'>
+        <div className='flex flex-col h-30 gap-5'>
+            <div className='title self-start text-xl'>
+                <h1>{props.project.title}</h1>
+            </div>
+            <div className='tech stack flex flex-wrap gap-3'>
+                {
+                    props.project.tech.map((item,id)=>{
+                        return <div id={id} className='w-fit h-fit bg-blue-900 border border-blue-500 rounded-full p-2 text-xs'><h1>{item}</h1></div>
+                    })
+                }
+            </div>
         </div>
-    <div className='panel h-[50%] flex flex-col justify-around gap-5 w-full px-5 py-2'>
-        <div className='self-start text-2xl font-semibold'>
-            <h1>Scatch</h1>
-        </div>
-        <div className='tech stack flex flex-wrap gap-3'>
-            <div className='w-fit h-fit bg-blue-900 border border-blue-500 rounded-full p-2 text-xs'><h1>Node.js</h1></div>
-            <div className='w-fit h-fit bg-blue-900 border border-blue-500 rounded-full p-2 text-xs'><h1>Express.js</h1></div>
-            <div className='w-fit h-fit bg-blue-900 border border-blue-500 rounded-full p-2 text-xs'><h1>MongoDB</h1></div>
-            <div className='w-fit h-fit bg-blue-900 border border-blue-500 rounded-full p-2 text-xs'><h1>EJS</h1></div>
-        </div>
-        <div className='links flex justify-between'>
-            <a href='' className='flex items-center gap-1 border-blue-900 border rounded-lg p-2'>
-                <h1 href="">Code</h1>
-                <FaExternalLinkSquareAlt />
-            </a>
-            <a href='' className='flex items-center gap-1 border border-blue-900 rounded-lg p-2'>
-                <h1 href="">details</h1>
+        <div className='links flex justify-between py-5'>
+            <motion.a whileHover={{
+                boxShadow:"0px 0px 2px blue,0px 0px 2px blue,0px 0px 20px blue",
+                rotate:-5
+            }} transition={{duration:0.2,ease:"easeInOut"}} target="_blank" href={`https://github.com/abdulghanisheikh/${props.project.github}`} className='flex items-center gap-2 border-blue-900 border rounded-lg p-2'>
+                <h1>Code</h1>
+                <BsGithub/>
+            </motion.a>
+            <motion.a whileHover={{
+                boxShadow:"0px 0px 2px orangered,0px 0px 2px orangered,0px 0px 15px orangered",
+                rotate:-5
+            }} transition={{duration:0.2,ease:"easeInOut"}} href='#' className='flex items-center gap-2 border border-yellow-900 rounded-lg p-2'>
+                <h1>details</h1>
                 <FaArrowRight/>
-            </a>
+            </motion.a>
         </div>
     </div>
-    </div>
+    </motion.div>
   )
 }
 
