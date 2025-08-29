@@ -5,12 +5,12 @@ const Navbar=()=>{
     const logo="{AG}";
     return (
       <motion.div
-      className='navbar text-white sticky top-2 left-60 border-2 z-[20] bg-black/10 backdrop-blur-md border-white/20 hover:shadow-md hover:shadow-blue-900 flex w-2/3 h-20 rounded-full justify-between items-center py-4 px-8'
+      className='navbar text-white sticky top-2 left-60 border-2 z-[20] bg-black/10 backdrop-blur-md border-white/30 flex w-2/3 h-20 rounded-full justify-between items-center py-4 px-8'
       whileHover={{
-        y:5
+        y:10
       }}
       transition={{
-        duration:0.1,
+        duration:0.2,
         ease:"easeInOut"
       }}
       >

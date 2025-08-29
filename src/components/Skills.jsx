@@ -5,11 +5,27 @@ const Skills=()=>{
   return(
     <div className='skills flex flex-col w-full gap-15 min-h-screen py-25 items-center text-white'>
         <div className='flex flex-col gap-1 w-2/3'>
-          <h1 className='text-6xl font-bold'>Tech Stack I Work With.</h1>
+          <motion.h1 
+          animate={{
+            backgroundPosition:["0% 50%","50% 100%","50% 0%"]
+          }}
+          transition={{
+            backgroundPosition:{duration:6,ease:"linear",repeat:Infinity}
+          }}
+          style={{
+            backgroundSize:"100% 100%",
+          }} 
+          className='text-6xl font-bold tracking-tighter bg-gradient-to-r from-[#30D5C0] via-emerald-500 to-red-800 text-transparent bg-clip-text'>Tech Stack I Work With.</motion.h1>
           <hr className='border-t border-4 border-blue-500 rounded-full w-70' />
         </div>
-        <div className='flex flex-col w-[80%] gap-8'>
-          <div className='flex px-10 py-5 min-h-40 hover:shadow-md hover:shadow-blue-500 hover:scale-103 hover:rounded-lg duration-500 ease-in-out'>
+        <div className='flex flex-col w-[70%] gap-8'>
+          <motion.div whileHover={{
+            scale:1.01,
+            boxShadow:"0px 0px 5px skyblue,0px 0px 5px skyblue,0px 0px 10px skyblue"
+          }} transition={{
+            duration:0.2,
+            ease:"easeInOut"
+          }} className='flex px-15 py-5 min-h-40 rounded-xl'>
             <div className='self-start w-1/2 py-2'>
               <h1 className='font-semibold text-xl text-gray-400'>LANGUAGES</h1>
             </div>
@@ -39,8 +55,14 @@ const Skills=()=>{
                 <h1>JavaScript</h1>
               </div>
             </motion.div>
-          </div>
-          <motion.div className='flex px-10 py-5 min-h-40 hover:shadow-md hover:shadow-blue-500 hover:scale-103 hover:rounded-lg duration-500 ease-in-out'>
+          </motion.div>
+          <motion.div whileHover={{
+            scale:1.01,
+            boxShadow:"0px 0px 5px skyblue,0px 0px 5px skyblue,0px 0px 10px skyblue"
+          }} transition={{
+            duration:0.2,
+            ease:"easeInOut"
+          }} className='flex px-15 py-5 min-h-40 rounded-xl'>
             <div className='self-start w-1/2 py-2'>
               <h1 className='font-semibold text-xl text-gray-400'>FRONTEND</h1>
             </div>
@@ -89,7 +111,13 @@ const Skills=()=>{
               </div>
             </motion.div>
           </motion.div>
-          <div className='flex px-10 py-5 min-h-40 hover:shadow-md hover:shadow-blue-500 hover:scale-103 hover:rounded-lg duration-500 ease-in-out'>
+          <motion.div whileHover={{
+            scale:1.01,
+            boxShadow:"0px 0px 5px skyblue,0px 0px 5px skyblue,0px 0px 10px skyblue"
+          }} transition={{
+            duration:0.2,
+            ease:"easeInOut"
+          }} className='flex px-15 py-5 min-h-40 rounded-xl'>
             <div className='self-start w-1/2 py-2'>
               <h1 className='font-semibold text-xl text-gray-400'>BACKEND</h1>
             </div>
@@ -137,8 +165,14 @@ const Skills=()=>{
                 <h1>REST APIs</h1>
               </div>
             </motion.div>
-          </div>
-          <div className='flex px-10 py-5 min-h-40 hover:shadow-md hover:shadow-blue-500 hover:scale-103 hover:rounded-lg duration-500 ease-in-out'>
+          </motion.div>
+          <motion.div whileHover={{
+            scale:1.01,
+            boxShadow:"0px 0px 5px skyblue,0px 0px 5px skyblue,0px 0px 10px skyblue"
+          }} transition={{
+            duration:0.2,
+            ease:"easeInOut"
+          }} className='flex px-15 py-5 min-h-40 rounded-xl'>
             <div className='self-start w-1/2 py-2'>
               <h1 className='font-semibold text-xl text-gray-400'>TOOLS</h1>
             </div>
@@ -186,7 +220,7 @@ const Skills=()=>{
                 <h1>NPM</h1>
               </div>
             </motion.div>
-          </div>
+          </motion.div>
         </div>
       </div>
   );

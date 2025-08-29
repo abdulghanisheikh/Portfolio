@@ -17,7 +17,17 @@ const About=()=>{
   return (
     <div id='about' className='w-full h-screen py-25 flex flex-col gap-10 items-center text-white'>
             <div className='flex flex-col gap-1 w-2/3'>
-              <h1 className='font-bold tracking-tighter text-6xl self-start'>About Me</h1>
+              <motion.h1
+              animate={{
+                backgroundPosition:["0% 50%","50% 100%","50% 0%"]
+              }}
+              transition={{
+                backgroundPosition:{duration:6,ease:"linear",repeat:Infinity}
+              }}
+              style={{
+                backgroundSize:"100% 100%"
+              }}
+              className='font-bold tracking-tighter text-6xl self-start bg-gradient-to-r from-sky-300 via-cyan-500 to-blue-500 text-transparent bg-clip-text'>About Me</motion.h1>
               <hr className='border-t border-4 rounded-full w-40 text-blue-500'/>
             </div>
             <div className='flex gap-50'>
@@ -28,13 +38,12 @@ const About=()=>{
                 transition:{duration:0.2,ease:"easeInOut"}
               }} whileInView="inView" transition={{
                 duration:0.5,
-                delay:0.2,
                 ease:"easeInOut"
               }} viewport={{
                 amount:0.5
               }}
               className='bg-zinc-900 p-5 px-10 tracking-tight flex flex-col gap-5 rounded-lg w-130 text-gray-300'>        
-                <div><p>Hello, I'm <span className='font-semibold'>Abdul Ghani</span>, a <span className='font-semibold text-blue-400'>Web Developer</span> with experience in designing and developing full-stack applications. Proficient in backend technologies such as <span className='text-blue-400 font-semibold'>Node.js</span>,<span className='text-blue-400 font-semibold'> Express</span>, <span className='text-blue-400 font-semibold'>MongoDB</span>, <span className='text-blue-400 font-semibold'>JavaScript</span> and <span className='text-blue-400 font-semibold'>Java</span>, and frontend technologies including <span className='font-semibold text-blue-400'>React</span>, <span className='text-blue-400 font-semibold'>TailwindCSS</span>,<span className='text-blue-400 font-semibold'> HTML5</span> and <span className='text-blue-400 font-semibold'>CSS3</span> with end-to-end development exposure. Skilled in RESTful API development, authentication and authorization (JWT, bcrypt), and database integration with MongoDB and I'm eager to work on cutting-edge technologies in web development.</p></div>
+                <div><p>Hello, I'm <span className='font-semibold'>Abdul Ghani</span>, a <span className='font-semibold text-blue-400'>Web Developer</span> with experience in designing and developing full-stack applications. Proficient in backend technologies such as <span className='text-blue-400 font-semibold'>Node.js</span>,<span className='text-blue-400 font-semibold'> Express</span>, <span className='text-blue-400 font-semibold'>MongoDB</span>, <span className='text-blue-400 font-semibold'>JavaScript</span> and <span className='text-blue-400 font-semibold'>Java</span>, and frontend technologies including <span className='font-semibold text-blue-400'>React</span>, <span className='text-blue-400 font-semibold'>TailwindCSS</span>,<span className='text-blue-400 font-semibold'> HTML5</span> and <span className='text-blue-400 font-semibold'>CSS3</span> with end-to-end development exposure. Skilled in RESTful API development, authentication and authorization (JWT, bcrypt), and database integration with MongoDB and I'm actively seeking opportunities to gain hands-on experience, contribute to meaningful products, and grow professionally.</p></div>
                 <div>
                   <p>When I'm not coding, I enjoy playing multiplayer games such as Call of Duty, which foster relaxation, strategy and collaboration with friends.</p>
                 </div>
@@ -42,15 +51,23 @@ const About=()=>{
               <div className='flex flex-col gap-25 items-center'>
                 <motion.div variants={variant2} initial="hidden" whileInView="inView" transition={{
                   duration:0.5,
-                  delay:0.2,
                   ease:"easeInOut"
                 }} viewport={{
                   amount:0.4
                 }}
                 className='flex flex-col gap-5'>
                   <div className='flex items-center gap-2 text-3xl'>
-                    <RiGraduationCapFill/>
-                    <h1 className='font-semibold tracking-tighter text-gray-200'>Education</h1>
+                    <RiGraduationCapFill color='white'/>
+                    <motion.h1 animate={{
+                    backgroundPosition:["0% 50%","50% 100%","50% 0%"]
+                    }}
+                    transition={{
+                      backgroundPosition:{duration:6,ease:"linear",repeat:Infinity}
+                    }}
+                    style={{
+                      backgroundSize:"100% 100%"
+                    }}
+                    className='font-semibold tracking-tighter bg-gradient-to-r from-white via-sky-500 to-blue-600 bg-clip-text text-transparent'>Education</motion.h1>
                   </div>
                   <motion.div whileHover={{
                     scale:1.03,

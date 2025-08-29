@@ -17,6 +17,7 @@ const Hero=()=>{
                     scale:1.1
                 }} transition={{
                     duration:0.4,
+                    delay:0.2,
                     ease:"easeInOut"
                 }} src="../profile1.jpg" className='object-cover w-85 h-80 rounded-full' alt="profile picture" />
             </div>
@@ -42,18 +43,25 @@ const Hero=()=>{
         <div className='w-[1px] h-[500px] border-1 border-white opacity-5 ml-8'></div>
         <div className='flex flex-col gap-10 w-3/4 ml-8'>
             <div className='flex flex-col gap-5 w-full'>
-            <h1 className='text-2xl tracking-tighter'>Hi, I'm- <br /><motion.span whileInView={{
+            <h1 className='text-2xl tracking-tighter'>Hi, I'm- <br /><motion.span 
+            whileInView={{
                 opacity:[0,1],
-            }} transition={{
+            }} 
+            transition={{
                 duration:0.6,
-                delay:0.2,
                 ease:"easeInOut"
-            }} className='text-blue-500 text-9xl font-semibold'>Abdul Ghani</motion.span><span className='text-9xl'>.</span></h1>
+            }}
+            style={{backgroundSize:"100% 100%"}}
+            animate={{
+                backgroundPosition:["0% 50%","50% 100%","50% 0%"],
+                transition:{backgroundPosition:{duration:6,ease:"linear",repeat:Infinity}}
+            }}
+            className='text-9xl font-semibold bg-gradient-to-r from-purple-400 via-orange-300 to-red-600 text-transparent bg-clip-text'>Abdul Ghani</motion.span><span className='text-9xl'>.</span></h1>
             <h1 className='text-3xl tracking-tighter text-gray-300 w-full'>a <motion.span whileInView={{
                 opacity:[0,1],
             }} transition={{
                 duration:0.6,
-                delay:0.8,
+                delay:0.6,
                 ease:"easeInOut"
             }} className='text-white font-semibold'>Web Developer</motion.span>. Building the web, better.</h1>
             </div>
@@ -81,11 +89,12 @@ const Hero=()=>{
                 <motion.div
                 variants={{
                     rest:{
-                        color:"white"
+                        color:"white",
+                        scale:1
                     },
                     hover:{
-                        color:"#3B82F6",
-                        scale:1.06
+                        color:"salmon",
+                        scale:1.1
                     }
                 }}
                 transition={{
