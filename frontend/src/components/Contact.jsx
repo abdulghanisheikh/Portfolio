@@ -15,10 +15,11 @@ const Contact=()=>{
     const handleChange=(e)=>{
         setData({...data,[e.target.name]:e.target.value});
     }
+    const API_URL=import.meta.env.VITE_API_URL;
     const handleSubmit=async(e)=>{
         e.preventDefault();
         try{
-            await axios.post("https://portfolio-messages-api.onrender.com/contact",data);
+            await axios.post(API_URL,data);
             setData({name:"",email:"",message:""});
         }
         catch(err){
