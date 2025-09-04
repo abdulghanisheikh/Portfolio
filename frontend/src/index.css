@@ -1,43 +1,8 @@
 @import "tailwindcss";
-
-@font-face {
-  font-family: 'Space Mono';
-  src: url('/fonts/Space_Mono/SpaceMono-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+body {
+  font-family: 'Poppins', sans-serif;
 }
-
-@font-face {
-  font-family: 'Space Mono';
-  src: url('/fonts/Space_Mono/SpaceMono-Italic.ttf') format('truetype');
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Space Mono';
-  src: url('/fonts/Space_Mono/SpaceMono-Bold.ttf') format('truetype');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Space Mono';
-  src: url('/fonts/Space_Mono/SpaceMono-BoldItalic.ttf') format('truetype');
-  font-weight: 700;
-  font-style: italic;
-  font-display: swap;
-}
-
-@layer base {
-  html, body {
-    font-family: 'Space Mono', monospace;
-  }
-}
-
 ::selection {
   color: greenyellow;
 }
