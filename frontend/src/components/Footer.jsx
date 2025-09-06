@@ -37,7 +37,7 @@ const Footer=()=>{
                     <p className='text-xs text-gray-400 mt-10'>All logos, trademarks, and brandnames are the property of their respective owners.</p>
                     <div className='flex justify-between items-center mt-5 gap-60'>
                         <div>
-                            <p className='text-sm'><span className='text-2xl'>©</span> 2025 Abdul Ghani</p>
+                            <p className='text-sm'>© 2025 Abdul Ghani</p>
                         </div>
                         <motion.div className='socials flex gap-10' initial="hidden" whileInView="visible">
                             <motion.a href="https://github.com/abdulghanisheikh" target="_blank" className='flex flex-col items-center'>
