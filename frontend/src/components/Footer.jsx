@@ -30,9 +30,9 @@ const Footer=()=>{
                 <div className='flex mt-12 flex-col gap-2 items-center'>
                     <motion.h1 className='text-gray-400'>MADE WITH</motion.h1>
                     <motion.div whileInView="inView" viewport={{amount:1}} transition={{staggerChildren:0.1,childrenDelay:0.2,ease:"easeInOut"}} className='flex gap-10'>
-                        <motion.img variants={{inView:{rotate:[100,0]}}} transition={{duration:1,ease:"easeInOut"}} className='h-10 w-10' src="/reactlogo.png" alt="" />
-                        <motion.img variants={{inView:{rotate:[100,0]}}} transition={{duration:1,ease:"easeInOut"}} className='h-10 w-10' src="/TailwindCSS.png" alt="" />
-                        <motion.img variants={{inView:{rotate:[100,0]}}} transition={{duration:1,ease:"easeInOut"}} className='h-10 w-10' src="/framer-motion-logo.png" alt="" />
+                        <motion.img variants={{inView:{rotate:[50,0]}}} transition={{duration:1,ease:"easeInOut"}} className='h-10 w-10' src="/reactlogo.png" alt="" />
+                        <motion.img variants={{inView:{rotate:[50,0]}}} transition={{duration:1,ease:"easeInOut"}} className='h-10 w-10' src="/TailwindCSS.png" alt="" />
+                        <motion.img variants={{inView:{rotate:[50,0]}}} transition={{duration:1,ease:"easeInOut"}} className='h-10 w-10' src="/framer-motion-logo.png" alt="" />
                     </motion.div>
                     <p className='text-xs text-gray-400 mt-10'>All logos, trademarks, and brandnames are the property of their respective owners.</p>
                     <div className='flex justify-between items-center mt-5 gap-60'>

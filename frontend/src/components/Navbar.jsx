@@ -19,7 +19,7 @@ const Navbar=()=>{
     ]
     return (
       <motion.div
-      className='navbar text-white sticky top-2 left-60 border-2 z-[20] bg-black/10 backdrop-blur-md border-white/30 flex w-2/3 h-20 rounded-full justify-between items-center py-4 px-8'
+      className='navbar text-white sticky top-2 left-[50%] -translate-x-[50%] border-2 z-[20] bg-black/10 backdrop-blur-md border-white/30 flex w-1/2 h-20 rounded-full justify-between items-center py-4 px-8'
       variants={navbarVariant}
       initial="rest"
       whileHover="hovered"

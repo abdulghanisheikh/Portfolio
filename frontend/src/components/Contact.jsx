@@ -29,6 +29,7 @@ const Contact=()=>{
     const formVariants={rest:{opacity:0,y:-8},inView:{opacity:1,y:0}}
     const paraVariants={rest:{opacity:0,y:8},inView:{opacity:1,y:0}}
     const MotionHashLink=motion(HashLink);
+    const inputsVariant={rest:{scale:1},hovered:{scale:1.02}}
     return(
         <div className='relative min-h-screen w-full overflow-hidden'>
             <div className='absolute inset-0 bg-[url("/contact-bg.jpg")] bg-center bg-cover'></div>
@@ -50,7 +51,7 @@ const Contact=()=>{
                     <div className='flex flex-col self-start w-1/3 h-100 gap-5 mt-20 pl-5 items-center'>
                     <motion.p whileInView="inView" initial="rest" variants={paraVariants}
                     transition={{duration:1,delay:0.1,ease:"easeInOut"}}
-                    className='text-gray-300 font-bold mb-15 w-90 text-xl text-center'>Have a project in mind or want to discuss opportunities? <br /> I'd love to hear from you.</motion.p>
+                    className='text-gray-300 font-semibold mb-15 w-90 text-xl text-center'>Have a project in mind or want to discuss opportunities? <br /> I'd love to hear from you.</motion.p>
                         <motion.div variants={formVariants} whileInView="inView" initial="rest" transition={{
                             duration:1,delay:0.1,ease:"easeInOut"
                         }} className='flex gap-1 items-center'>
@@ -62,12 +63,19 @@ const Contact=()=>{
                         </motion.div>
                     </div>
                     <motion.form onSubmit={handleSubmit} initial="rest" whileInView="inView" transition={{duration:1,delay:0.1,ease:"easeInOut"}}
+                    whileHover={{
+                        boxShadow:"0px 0px 1px #5B21B6,0px 0px 1px #5B21B6, 0px 0px 30px #5B21B6",
+                        transition:{
+                            duration:0.3,
+                            ease:"easeInOut"
+                        }
+                    }}
                     viewport={{
                         amount:0.2
                     }}
                     variants={formVariants}
                     className='form py-5 px-8 w-200 h-115 rounded-xl tracking-tighter'
-                    style={{boxShadow:"0px 0px 1px #5B21B6,0px 0px 1px #5B21B6, 0px 0px 30px #5B21B6"}}>
+                    style={{boxShadow:"0px 0px 1px #5B21B6,0px 0px 1px #5B21B6, 0px 0px 10px #5B21B6"}}>
                         <motion.div variants={{
                             notInView:{
                                 y:-5,
@@ -82,9 +90,9 @@ const Contact=()=>{
                             <p className='text-400 text-md'>I'll get back to you as soon as possible.</p>
                         </motion.div>
                         <div className='flex flex-col gap-2 mt-5'>
-                            <input value={data.name} onChange={handleChange} className='py-3 px-5 bg-black/50 outline-none rounded-md' type="text" name="name" placeholder='Your Name' />
-                            <input value={data.email} onChange={handleChange} className='py-3 px-5 outline-none bg-black/50 rounded-md' type='email' name="email" placeholder='Your Email' />
-                            <textarea value={data.message} onChange={handleChange} name="message" type="text" placeholder='Your Message' className='h-40 bg-black/50 outline-none rounded-lg py-3 px-5 resize-none'></textarea>
+                            <motion.input value={data.name} variants={inputsVariant} initial="rest" whileHover="hovered" transition={{duration:0.2,ease:"easeInOut"}} onChange={handleChange} className='py-3 px-5 bg-black/50 outline-none rounded-md' type="text" name="name" placeholder='Your Name' />
+                            <motion.input variants={inputsVariant} whileHover="hovered" initial="rest" value={data.email} onChange={handleChange} transition={{duration:0.2,ease:"easeInOut"}} className='py-3 px-5 outline-none bg-black/50 rounded-md' type='email' name="email" placeholder='Your Email' />
+                            <motion.textarea variants={inputsVariant} transition={{duration:0.2,ease:"easeInOut"}} whileHover="hovered" initial="rest" value={data.message} onChange={handleChange} name="message" type="text" placeholder='Your Message' className='h-40 bg-black/50 outline-none rounded-lg py-3 px-5 resize-none'></motion.textarea>
                             <AnimatePresence>
                             <motion.button initial={{
                                 scale:1

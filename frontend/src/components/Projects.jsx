@@ -71,7 +71,7 @@ const Projects=()=>{
         </motion.div>
         <motion.div transition={{staggerChildren:0.2,delayChildren:0.1,ease:"easeInOut"}} viewport={{
           amount:0.5
-        }} initial="notInView" whileInView="inView" className='w-2/3 flex gap-15 justify-around flex-wrap'>
+        }} initial="notInView" whileInView="inView" className='w-2/3 flex gap-2 justify-evenly flex-wrap'>
           {details.map((item,id)=>(
             <motion.div variants={{notInView:{opacity:0,x:5},inView:{opacity:1,x:0}}}>
               <Project project={item} onDetail={()=>setCurrent(item)} key={id}/>

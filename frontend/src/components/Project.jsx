@@ -13,7 +13,7 @@ const Project=({project,onDetail})=>{
         hovered:{scale:1.2,y:-5}
     }
     return(
-        <motion.div variants={parentVariant} whileHover="hovered" initial="rest" className='box relative tracking-tight bg-black/40 h-110 w-110 rounded-xl overflow-hidden flex flex-col' transition={{
+        <motion.div variants={parentVariant} whileHover="hovered" initial="rest" className='box relative tracking-tight bg-black/40 h-100 w-100 rounded-xl overflow-hidden flex flex-col' transition={{
             duration:0.5,
             ease:"easeInOut"
         }}>
