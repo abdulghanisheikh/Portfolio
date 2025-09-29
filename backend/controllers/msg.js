@@ -1,4 +1,4 @@
-const messageModel=require("./models/message-model");
+const messageModel=require("../models/message-model.js");
 const sentMessage=async(req,res)=>{
     try{
         const {name,email,message}=req.body;
