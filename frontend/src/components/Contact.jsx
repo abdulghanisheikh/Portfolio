@@ -5,7 +5,7 @@ import Socials from "./Socials";
 import { BsSend } from "react-icons/bs";
 import {HashLink} from "react-router-hash-link";
 import axios from "axios";
-import {ToastContainer,toast} from "react-toastify";
+import {toast} from "react-toastify";
 
 const Contact=()=>{
     const [data,setData]=useState({
@@ -117,7 +117,6 @@ const Contact=()=>{
                         </div>
                     </motion.form>
                 </div>
-                <ToastContainer position="top-right" />
             </div>
         </div>
     )

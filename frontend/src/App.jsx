@@ -8,6 +8,7 @@ import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import {HashRouter} from "react-router-dom";
+import {ToastContainer} from "react-toastify";
 
 const App=()=>{
   return(
@@ -24,6 +25,7 @@ const App=()=>{
         <section id="contact"><Contact /></section>
         <section id="footer"><Footer /></section>
       </div>
+      <ToastContainer position="top-right" />
     </div>
     </HashRouter>
   );
