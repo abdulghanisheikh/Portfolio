@@ -1,10 +1,10 @@
 const express=require("express");
 require("dotenv").config();
+const sentMessage=require("./controllers/msg.js");
 const dbConnection=require("./config/database-connection");
 const app=express();
 dbConnection();
 const cors=require("cors");
-const sentMessage=require("./controllers/msg.js");
 
 app.use(cors({origin:process.env.REACT_URL}));
 app.use(express.json());

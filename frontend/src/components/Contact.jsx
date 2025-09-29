@@ -20,15 +20,13 @@ const Contact=()=>{
     const handleSubmit=async(e)=>{
         e.preventDefault();
         try{
-            const {data}=await axios.post(API_URL,data);
-            const {success,message}=data;
+            const res=await axios.post(`${API_URL}/contact`,data);
+            const {success,message}=res.data;
             if(success){
                 toast.success(message);
                 setData({name:"",email:"",message:""});
             }
-            else{
-                toast.error(message);
-            }
+            else toast.error(message);
         }
         catch(err){
             toast.error(err.message);
@@ -120,7 +118,7 @@ const Contact=()=>{
                     </motion.form>
                 </div>
             </div>
-            <ToastContainer position="top-center" />
+            <ToastContainer position="top-center"/>
         </div>
     )
 }
