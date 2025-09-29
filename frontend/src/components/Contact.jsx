@@ -116,8 +116,8 @@ const Contact=()=>{
                             </AnimatePresence>
                         </div>
                     </motion.form>
-                    <ToastContainer position="top-right"/>
                 </div>
+                <ToastContainer position="top-right" />
             </div>
         </div>
     )
