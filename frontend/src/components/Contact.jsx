@@ -20,7 +20,7 @@ const Contact=()=>{
     const handleSubmit=async(e)=>{
         e.preventDefault();
         try{
-            const res=await axios.post(`${API_URL}/contact`,data);
+            const res=await axios.post(API_URL,data);
             const {success,message}=res.data;
             if(success){
                 toast.success(message);
