@@ -117,8 +117,8 @@ const Contact=()=>{
                         </div>
                     </motion.form>
                 </div>
+                <ToastContainer position="top-right"/>
             </div>
-            <ToastContainer position="top-center"/>
         </div>
     )
 }
