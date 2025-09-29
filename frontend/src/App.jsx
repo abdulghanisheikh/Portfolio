@@ -8,12 +8,10 @@ import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import {HashRouter} from "react-router-dom";
-import {ToastContainer} from "react-toastify";
 
 const App=()=>{
   return(
     <HashRouter>
-    <ToastContainer position="top-right" style={{zIndex:9999}} />
     <div className="relative w-full bg-cover bg-top bg-[url('/bg-2.jpg')]">
       <div className='absolute inset-0 bg-black/75 w-full min-h-full'></div>
       <Bar/>
