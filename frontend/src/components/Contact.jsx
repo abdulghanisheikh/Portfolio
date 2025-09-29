@@ -5,6 +5,7 @@ import Socials from "./Socials";
 import { BsSend } from "react-icons/bs";
 import {HashLink} from "react-router-hash-link";
 import axios from "axios";
+import {ToastContainer,toast} from "react-toastify";
 
 const Contact=()=>{
     const [data,setData]=useState({
@@ -19,11 +20,18 @@ const Contact=()=>{
     const handleSubmit=async(e)=>{
         e.preventDefault();
         try{
-            await axios.post(API_URL,data);
-            setData({name:"",email:"",message:""});
+            const {data}=await axios.post(API_URL,data);
+            const {success,message}=data;
+            if(success){
+                toast.success(message);
+                setData({name:"",email:"",message:""});
+            }
+            else{
+                toast.error(message);
+            }
         }
         catch(err){
-            console.log(err.message);
+            toast.error(err.message);
         }
     }
     const formVariants={rest:{opacity:0,y:-8},inView:{opacity:1,y:0}}
@@ -112,6 +120,7 @@ const Contact=()=>{
                     </motion.form>
                 </div>
             </div>
+            <ToastContainer position="top-center" />
         </div>
     )
 }
