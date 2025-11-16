@@ -8,11 +8,14 @@ import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import {HashRouter} from "react-router-dom";
+import CustomCursor from "./components/CustomCursor";
 
 const App=()=>{
   return(
+    <>
+    <CustomCursor/>
     <HashRouter>
-    <div className="relative w-full bg-cover bg-top bg-[url('/bg-2.jpg')]">
+    <main className="relative w-full bg-cover bg-top bg-[url('/bg-2.jpg')]">
       <div className='absolute inset-0 bg-black/75 w-full min-h-full'></div>
       <Bar/>
       <Navbar />
@@ -24,8 +27,9 @@ const App=()=>{
         <section id="contact"><Contact /></section>
         <section id="footer"><Footer /></section>
       </div>
-    </div>
+    </main>
     </HashRouter>
+    </>
   );
 };
 

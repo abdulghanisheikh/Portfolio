@@ -8,6 +8,13 @@ const Projects=()=>{
   const [current,setCurrent]=useState(null);
 
   const projectsDetail=[{
+    title:"FileNest -  All your files, one secure home",
+    image:"/projects/FileNest-pic.png",
+    tech:["React.js","Tailwindcss","Node.js","Express","MongoDB","Supabase"],
+    github:"FileNest",
+    desc:"Designing FileNest, A Google Drive inspired cloud storage web app using the MERN stack with Supabase as file storage, Implemented user authentication (login/signup), clean UI, and CRUD operations for files."
+  },
+  {
     title:"Scatch - Premium bag shop",
     image:"/projects/Scatch-pic.png",
     tech:["EJS","Tailwindcss","Node.js","Express","MongoDB"],
@@ -20,7 +27,7 @@ const Projects=()=>{
     tech:["EJS","Tailwindcss","Node.js","Express","MongoDB"],
     github:"Microblogging-platform",
     desc:"A simple microblogging web application where user can post and manage short blogs, user can create, like, delete and edit the posts. EJS and Tailwindcss for visually appealing UI. Express handles protected routes. MongoDB handles users and posts storage. User authentication handled by JWT (JSON Web Token). Bcrypt password hashing ensures security."
-  },]
+  }];
 
   useEffect(()=>{
     setDetails(projectsDetail);
@@ -71,7 +78,7 @@ const Projects=()=>{
         </motion.div>
         <motion.div transition={{staggerChildren:0.2,delayChildren:0.1,ease:"easeInOut"}} viewport={{
           amount:0.5
-        }} initial="notInView" whileInView="inView" className='w-2/3 flex gap-2 justify-evenly flex-wrap'>
+        }} initial="notInView" whileInView="inView" className='w-2/3 flex gap-2 justify-evenly flex-wrap space-y-5'>
           {details.map((item,id)=>(
             <motion.div variants={{notInView:{opacity:0,x:5},inView:{opacity:1,x:0}}}>
               <Project project={item} onDetail={()=>setCurrent(item)} key={id}/>

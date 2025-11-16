@@ -1,10 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
 
-body {
-  font-family: 'Poppins', sans-serif;
+body{
+  font-family:'Poppins', sans-serif;
 }
 
 ::selection {
   color: greenyellow;
+}
+
+#cursor{
+    position:fixed;
+    height:1rem;
+    width:1rem;
+    background: white;
+    border-radius:50%;
+    z-index:999;
+    transform:translate(-50%,-50%);
+    box-shadow:0 0 15px white;
+    mix-blend-mode:difference;
+    transition:none;
+    pointer-events:none; /*tells the browser to ignore cursor div while doing any kind of mouse events*/
 }

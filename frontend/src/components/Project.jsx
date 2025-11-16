@@ -13,14 +13,14 @@ const Project=({project,onDetail})=>{
         hovered:{scale:1.2,y:-5}
     }
     return(
-        <motion.div variants={parentVariant} whileHover="hovered" initial="rest" className='box relative tracking-tight bg-black/40 h-100 w-100 rounded-xl overflow-hidden flex flex-col' transition={{
+        <motion.div variants={parentVariant} whileHover="hovered" initial="rest" className='box relative tracking-tight bg-black/40 py-3 w-100 rounded-xl overflow-hidden flex flex-col gap-2' transition={{
             duration:0.5,
             ease:"easeInOut"
         }}>
             <motion.div variants={imageVariant} transition={{duration:0.5,ease:"easeInOut"}} className='h-[50%] bg-cover overflow-hidden p-5'>
                 <img src={`${project.image}`} className='h-full w-full rounded-md' alt="" />
             </motion.div>
-        <div className='panel h-[50%] flex flex-col justify-between gap-5 w-full px-5'>
+        <div className='panel flex flex-col justify-between gap-6 w-full px-5'>
             <div className='flex flex-col h-30 gap-5'>
                 <div className='title self-start text-xl'>
                     <h1>{project.title}</h1>
